@@ -7,7 +7,7 @@ var express = require('express');
 var morgan = require('morgan');
 
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URL || 'mongodb://localhost/messageboard')
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/messageboard')
 
 var app = express();
 
