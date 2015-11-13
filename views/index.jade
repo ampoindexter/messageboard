@@ -3,6 +3,7 @@ extends ./layout.jade
 block content
 
   .container
+    br
     .jumbotron
       h1 Message Board
     .row
@@ -10,17 +11,11 @@ block content
         form(name="new message", method="post")
         div.input
             span.label What's your name?
-            input(type="text", name="Name")
+            input#name(type="text", name="Name")
         div.input
           span.label What do you want to say?
-          textarea(name="message", cols="40", rows="5")
-        div.actions
-          input(type="submit", value="add")
-
-
-
-
-
-
+          textarea#message(name="message")
+        div.submit
+          input.btn#submit(type="submit", value="add")
 block scripts
-  script(src="js/main.js")
+  
