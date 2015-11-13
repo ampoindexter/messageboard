@@ -6,7 +6,9 @@ var router = express.Router();
 var Message = require('../models/message');
 
 router.post('/', function (req, res) {
-    console.log(req.body.title);
-    console.log(req.body.description);
-    res.send('Post page');
+  var input = req.body;
+  Message.create(input, function(err) {
+    if(err) return res.status(400).send(err);
+    res.send('index');
+  });
 });
