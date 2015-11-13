@@ -1,0 +1,26 @@
+extends ./layout.jade
+
+block content
+
+  .container
+    .jumbotron
+      h1 Message Board
+    .row
+      .col-xs-12
+        form(name="new message", method="post")
+        div.input
+            span.label New Message
+            input(type="text", name="New Message")
+        div.input
+            span.label Description
+            textarea(name="description", cols="40", rows="5")
+        div.actions
+            input(type="submit", value="add")
+
+
+
+
+
+
+block scripts
+  script(src="js/main.js")
