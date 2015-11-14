@@ -11,11 +11,17 @@ block content
         form(name="new message", method="post")
         div.input
             span.label What's your name?
-            input#name(type="text", name="Name")
+            input#author(type="text", name="Your Name")
         div.input
           span.label What do you want to say?
           textarea#message(name="message")
         div.submit
           input.btn#submit(type="submit", value="add")
+      .row
+        .col-xs-12
+          #msgBoard
+            each message in messages
+              .row.message
+                p= message.message
 block scripts
   

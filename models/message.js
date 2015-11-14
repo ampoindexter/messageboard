@@ -2,13 +2,14 @@
 
 let mongoose = require('mongoose');
 
-let User;
+let Message;
 
-let userSchema = mongoose.Schema({
-  username: {type: String, required: true, unique: true},
-  createdAt: { type: Date, default: new Date() }
+let messageSchema = mongoose.Schema({
+  author: { type: String, required: true },
+  createdAt: { type: Date, required: true, default: Date.now },
+  message: { type: String, required: true }
 });
 
-User = mongoose.model('User', userSchema);
+Message = mongoose.model('Message', messageSchema);
 
-module.exports = User;
+module.exports = Message;

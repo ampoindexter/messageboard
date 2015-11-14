@@ -6,13 +6,15 @@ var router = express.Router();
 var Message = require('../models/message');
 
 router.get('/', function(req, res) {
-  res.render("index");
+  Message.find({}, function(err, messages) {
+    messages.sort();
+    res.status(err ? 400 : 200).render('index', {messages: messages});
+  });
 });
 
 router.post('/', function (req, res) {
-  var input = req.body;
-  Message.create(input, function(err) {
-    if(err) return res.status(400).send(err.message);
-    res.send(messages);
+  var message = new Message(req.body);
+  message.save(function(err, savedMessage) {
+    res.status(err ? 400 : 200).send(err || savedMessage);
   });
 });
