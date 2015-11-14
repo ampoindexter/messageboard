@@ -15,7 +15,7 @@ app.set('view engine', 'jade');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded( {extended: true} ));
-app.use(bodyParse.json());
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.use('/', require('/routes/index'));
