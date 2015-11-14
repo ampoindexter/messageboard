@@ -20,6 +20,10 @@ app.use(express.static('public'));
 
 app.use('/', require('/routes/index'));
 
+app.get('/', function(req, res){
+  res.render(messages);
+});
+
 app.use(function(req, res){
   res.status(404).render('404');
 });
