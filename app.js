@@ -18,11 +18,7 @@ app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.use('/', require('/routes/index'));
-
-app.get('/', function(req, res){
-  res.render(messages);
-});
+app.use('/', require('./routes/messages'));
 
 app.use(function(req, res){
   res.status(404).render('404');

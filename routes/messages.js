@@ -18,3 +18,5 @@ router.post('/', function (req, res) {
     res.status(err ? 400 : 200).send(err || savedMessage);
   });
 });
+
+module.exports = router;
